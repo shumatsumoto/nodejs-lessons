@@ -1,4 +1,8 @@
 const fs = require('fs')
-console.log(__dirname)
+const path = require('path')
 
-fs.writeFileSync(__dirname + '/test.txt', 'hello, shu!!')
+
+const distPath = path.resolve(__dirname, '../dist/test.txt')
+console.log(distPath)
+
+fs.writeFileSync(distPath, 'hello, shu!!')
