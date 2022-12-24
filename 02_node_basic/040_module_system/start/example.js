@@ -1,5 +1,4 @@
-function plus(a, b) {
-  return a + b;
-}
+const { plus, minus } = require("./calc");
+
 const result = plus(1, 2);
 console.log(result);
