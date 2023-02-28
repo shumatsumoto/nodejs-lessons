@@ -13,18 +13,20 @@ import * as http from "http";
  */
 
 const server = http.createServer(function (req, res) {
-  console.log(req.url);
   if (req.url === "/") {
-    res.write(`<a href="/result">Get Method Link</a>`);
+    res.write(`<a href="/result?params=fafadfa">Get Method Link</a>`);
     res.end(`
       <form action="/result" method="POST">
         <input type="text" name="title">
         <input type="submit">
       </form>
     `);
-  } else if (req.url === "/bye") {
-    res.end("bye");
   } else {
+    console.log(req.url, req.method);
+    if (req.method === "GET") {
+      const aaa = new URLSearchParams(req.url);
+      console.log(aaa);
+    }
     res.end(req.url);
   }
 });
