@@ -15,6 +15,12 @@ app.get("/", function (req, res) {
     `);
 });
 
+app.get("/result", function (req, res) {
+  // GETのパラメータを取得
+  const params = req.query;
+  console.log(params);
+});
+
 app.listen(PORT, function () {
   console.log(`Server start: localhost:${PORT}`);
 });
