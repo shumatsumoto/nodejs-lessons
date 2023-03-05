@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 
 const PORT = 8080;
 const app = express();
@@ -11,11 +11,11 @@ const products = [
   { name: "clock", price: 700 },
 ];
 
-app.get('/products', function (req, res) {
+app.get("/products", function (req, res) {
   res.json(products);
 });
 
-app.post('/create-product', function (req, res) {
+app.post("/products", function (req, res) {
   const newProduct = req.body;
   products.push(newProduct);
   console.log(products);
